@@ -1,0 +1,16 @@
+{
+  "name": "task-6",
+  "version": "1.0.0",
+  "description": "First App to create server",
+  "main": "practice.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon practice.js",
+    "start-server": "node practice.js"
+  },
+  "author": "Abhishek Gautam",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

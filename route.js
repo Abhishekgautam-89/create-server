@@ -21,6 +21,7 @@ const routeHandler = (req, res)=>{
             res.write('</html>')
             return res.end();
         })        
+
     }
     else if (req.url==="/message1" && req.method==="POST"){
         
@@ -30,7 +31,7 @@ const routeHandler = (req, res)=>{
         })
         return req.on('end', ()=>{
             const parsedBody = Buffer.concat(body).toString();
-            const message = parsedBody.split('=')[1];
+            const message = parsedBody.split('=')[0];
             fs.writeFile('message1.txt', message, (err)=>{
                 res.statusCode = 302;
                 res.setHeader("Location", "/")                
@@ -41,3 +42,11 @@ const routeHandler = (req, res)=>{
 }
 
 module.exports=routeHandler
+// other ways to use
+// module.exports={
+//     router: routeHandler,
+//     someText: 'hello'
+// }
+
+// exports.handler=routeHandler;
+// exports.someText='hii'
